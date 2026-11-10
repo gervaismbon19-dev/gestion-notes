@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class GestionNotes {
     public static void main(String[] args) {
+        final double poids1 = 0.4, poids2 = 0.6;
+        final int coef_algo = 3, coef_based = 2, coef_ang = 1;
+
         Scanner clavier = new Scanner(System.in);
 
 //        Etape 1: En-tete de l'etudiant
