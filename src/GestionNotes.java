@@ -21,28 +21,28 @@ public class GestionNotes {
 
 //        Etape 2: Déclaration des variables et Lecture au clavier
 
-        System.out.print("Entrez votre prénom : ");
+        System.out.print("Prénom : ");
         String prenom = clavier.nextLine();
 
-        System.out.print("Entrez votre nom : ");
+        System.out.print("Nom : ");
         String nom = clavier.nextLine();
 
-        System.out.print("Entrez votre age : ");
+        System.out.print("Age : ");
         int age = clavier.nextInt();
         clavier.nextLine();
 
-        System.out.print("Entrez votre matricule : ");
+        System.out.print("Matricule : ");
         String matricule = clavier.nextLine();
 
 //       5 - Saisie des 3 notes
-        System.out.println("\n===================================");
-        System.out.println("    Entrez vos differentes notes    ");
+//        System.out.println("\n===================================");
+//        System.out.println("\n   Entrez vos differentes notes    ");
         int i;
         for (i = 0; i < 6; i++) {
             switch (i) {
                 case 0:
                     do {
-                        System.out.printf("Note de classe d'algo:\t");
+                        System.out.printf("Algorithmique, note de classe:\t");
                         algo_classe = clavier.nextDouble();
 
                         if (0 > algo_classe || algo_classe > 20) {
@@ -53,7 +53,7 @@ public class GestionNotes {
 
                 case 1:
                     do {
-                        System.out.printf("Note d'examen d'algo:\t");
+                        System.out.printf("Algorithmique, note d'examen:\t");
                         algo_exam = clavier.nextDouble();
 
                         if (0 > algo_exam || algo_exam > 20) {
@@ -63,7 +63,7 @@ public class GestionNotes {
                     break;
                 case 2:
                     do {
-                        System.out.printf("Note de classe SGBD:\t");
+                        System.out.printf("Base de données, note de classe :\t");
                         based_classe = clavier.nextDouble();
 
                         if (0 > based_classe || based_classe > 20) {
@@ -73,7 +73,7 @@ public class GestionNotes {
                     break;
                 case 3:
                     do {
-                        System.out.printf("Nbased_exam SGBD:\t");
+                        System.out.printf("Base de données, note d'examen :\t");
                         based_exam = clavier.nextDouble();
 
                         if (0 > based_exam || based_exam > 20) {
@@ -83,7 +83,7 @@ public class GestionNotes {
                     break;
                 case 4:
                     do {
-                        System.out.printf("Note de classe Anglais:\t");
+                        System.out.printf("Anglais, note de classe :\t");
                         ang_class = clavier.nextDouble();
 
                         if (0 > ang_class || ang_class > 20) {
@@ -93,7 +93,7 @@ public class GestionNotes {
                     break;
                 case 5:
                     do {
-                        System.out.printf("Note d'examen Anglais:\t");
+                        System.out.printf("Anglais, note d'examen :\t");
                         ang_exam = clavier.nextDouble();
 
                         if (0 > ang_exam || ang_exam > 20) {
@@ -114,12 +114,17 @@ public class GestionNotes {
 
         moyenneGen = (double) (moyenneAglo*coef_algo + moyenneBase*coef_based + moyenneAng*coef_ang)/sommeCoefs;
 
-        System.out.println("\n===================================");
-        System.out.println("        Affichage des Moyennes");
-        System.out.println("Moyenne Algo: " + moyenneAglo + "\nMoyenne SGBD: " + moyenneBase + "\nMoyenne Anglais: " + moyenneAng + "\nMoyenne General: " + moyenneGen);
+//        Affichage apres la saisie de toutes les imformations sur l'etudiant
 
 //        System.out.printf("Etudiant : %s %s (%d ans)\nMatricule : %s", prenom, nom, age, matricule);
-        System.out.print("\nEtudiant : " + prenom + " " + nom + " (" + age + " ans)\n" + "Matricule : " + matricule);
+        System.out.println("\nEtudiant : " + prenom + " " + nom + " (" + age + " ans)\n" + "Matricule : " + matricule);
+
+        System.out.println("-----------------------------");
+        System.out.printf("Algorithmique (coef %d)    : %.2f\n", coef_algo,moyenneAglo);
+        System.out.printf("Base de données (coef %d)  : %.2f\n", coef_based,moyenneBase);
+        System.out.printf("Anglais (coef %d)          : %.2f\n", coef_ang,moyenneAng);
+        System.out.println("-----------------------------");
+        System.out.printf("Moyenne générale       : %.2f\n / 20",moyenneGen);
 
 
     }
