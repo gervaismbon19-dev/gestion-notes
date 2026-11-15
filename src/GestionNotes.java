@@ -5,8 +5,10 @@ public class GestionNotes {
         final double poids1 = 0.4, poids2 = 0.6;
         final int coef_algo = 3, coef_based = 2, coef_ang = 1;
 
+        int sommeCoefs = coef_algo + coef_based + coef_ang;
+
         double algo_classe = 0, algo_exam = 0, based_classe = 0, based_exam = 0, ang_class = 0, ang_exam = 0;
-        double moyenneAglo, moyenneBase, moyenneAng;
+        double moyenneAglo =0, moyenneBase=0, moyenneAng=0, moyenneGen = 0;
 
         Scanner clavier = new Scanner(System.in);
 
@@ -108,10 +110,13 @@ public class GestionNotes {
         moyenneBase = poids1 * based_classe + poids2 * based_exam;
         moyenneAng = poids1 * ang_class + poids2 * ang_exam;
 
+//        La moyenne Generale
+
+        moyenneGen = (double) (moyenneAglo*coef_algo + moyenneBase*coef_based + moyenneAng*coef_ang)/sommeCoefs;
+
         System.out.println("\n===================================");
         System.out.println("        Affichage des Moyennes");
-        System.out.println("Moyenne Algo: " + moyenneAglo + "\n" + "Moyenne SGBD: " + moyenneBase + "\n" + "Moyenne Anglais: " + moyenneAng);
-
+        System.out.println("Moyenne Algo: " + moyenneAglo + "\nMoyenne SGBD: " + moyenneBase + "\nMoyenne Anglais: " + moyenneAng + "\nMoyenne General: " + moyenneGen);
 
 //        System.out.printf("Etudiant : %s %s (%d ans)\nMatricule : %s", prenom, nom, age, matricule);
         System.out.print("\nEtudiant : " + prenom + " " + nom + " (" + age + " ans)\n" + "Matricule : " + matricule);
