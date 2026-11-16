@@ -106,6 +106,7 @@ public class GestionNotes {
 
 //        Calcul des moyennes
 
+//        int masse =0;
         moyenneAglo = poids1 * algo_classe + poids2 * algo_exam;
         moyenneBase = poids1 * based_classe + poids2 * based_exam;
         moyenneAng = poids1 * ang_class + poids2 * ang_exam;
@@ -125,6 +126,8 @@ public class GestionNotes {
         System.out.printf("Anglais (coef %d)          : %.2f\n", coef_ang,moyenneAng);
         System.out.println("-----------------------------");
         System.out.printf("Moyenne générale       : %.2f\n / 20",moyenneGen);
+
+
 
 
     }
